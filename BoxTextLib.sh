@@ -21,7 +21,7 @@ say () {
   linesize=$(expr $spacesize + $length + $spacesize)
 
   tput sgr0
-    
+
   printf "$topleftcorner"; printf "%0.s$top" $(seq 1 $linesize); printf "$toprightcorner\n"
   printf "$leftside"; printf "%0.s " $(seq 1 $spacesize); tput bold; printf "$message"; tput sgr0; printf "%0.s " $(seq 1 $spacesize); printf "$rightside\n"
   printf "$bottomleftcorner"; printf "%0.s$bottom" $(seq 1 $linesize); printf "$bottomrightcorner\n"
@@ -38,52 +38,52 @@ if [ "$*" = "boxdoubleline" ] || [ "$style" = "boxdoubleline" ]
     top="═"
     bottom="═"
   else
-  if [ "$*" = "boxverticalsinglehorizontaldouble" ] || [ "$style" = "boxverticalsinglehorizontaldouble" ]
-  then
-    topleftcorner="╒"
-    toprightcorner="╕"
-    bottomleftcorner="╘"
-    bottomrightcorner="╛"
-    leftside="│"
-    rightside="│"
-    top="═"
-    bottom="═"
-  else
-  if [ "$*" = "boxverticaldoublehorizontalsingle" ] || [ "$style" = "boxverticaldoublehorizontalsingle" ]
-  then
-    topleftcorner="╓"
-    toprightcorner="╖"
-    bottomleftcorner="╙"
-    bottomrightcorner="╜"
-    leftside="║"
-    rightside="║"
-    top="─"
-    bottom="─"
-  else
-  if [ "$*" = "boxsingleline" ] || [ "$style" = "boxsingleline" ]
-  then
-    topleftcorner="┌"
-    toprightcorner="┐"
-    bottomleftcorner="└"
-    bottomrightcorner="┘"
-    leftside="│"
-    rightside="│"
-    top="─"
-    bottom="─"
-  else
-  if [ "$*" = "boxsolid" ] || [ "$style" = "boxsolid" ]
-  then
-    topleftcorner="█"
-    toprightcorner="█"
-    bottomleftcorner="█"
-    bottomrightcorner="█"
-    leftside="█"
-    rightside="█"
-    top="▀"
-    bottom="▄"
-fi
-fi
-fi
-fi
+    if [ "$*" = "boxverticalsinglehorizontaldouble" ] || [ "$style" = "boxverticalsinglehorizontaldouble" ]
+      then
+        topleftcorner="╒"
+        toprightcorner="╕"
+        bottomleftcorner="╘"
+        bottomrightcorner="╛"
+        leftside="│"
+        rightside="│"
+        top="═"
+        bottom="═"
+      else
+        if [ "$*" = "boxverticaldoublehorizontalsingle" ] || [ "$style" = "boxverticaldoublehorizontalsingle" ]
+          then
+          topleftcorner="╓"
+          toprightcorner="╖"
+          bottomleftcorner="╙"
+          bottomrightcorner="╜"
+          leftside="║"
+          rightside="║"
+          top="─"
+          bottom="─"
+        else
+          if [ "$*" = "boxsingleline" ] || [ "$style" = "boxsingleline" ]
+            then
+            topleftcorner="┌"
+            toprightcorner="┐"
+            bottomleftcorner="└"
+            bottomrightcorner="┘"
+            leftside="│"
+            rightside="│"
+            top="─"
+            bottom="─"
+          else
+            if [ "$*" = "boxsolid" ] || [ "$style" = "boxsolid" ]
+              then
+              topleftcorner="█"
+              toprightcorner="█"
+              bottomleftcorner="█"
+              bottomrightcorner="█"
+              leftside="█"
+              rightside="█"
+              top="▀"
+              bottom="▄"
+            fi
+        fi
+      fi
+    fi
 fi
 say
