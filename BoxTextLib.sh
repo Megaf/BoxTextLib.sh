@@ -30,6 +30,7 @@
 #
 # Or, you can do: message="This is a message" style=boxsolid ./BoxTextLib.sh
 # which will have the same effect.
+# For bold text, add variable weight=bold for bold and light or nothing for normal text.
 
 # Say function.
 # This function is used to "draw" the border around the text given by the $message variable.
@@ -42,9 +43,24 @@ say () {
   tput sgr0 # Clears terminal's colours and styles to default.
 
   # The lines below will print elements of the box and the variable $message.
-  printf "$topleftcorner"; printf "%0.s$top" $(seq 1 $linesize); printf "$toprightcorner\n"
-  printf "$leftside"; printf "%0.s " $(seq 1 $spacesize); tput bold; printf "$message"; tput sgr0; printf "%0.s " $(seq 1 $spacesize); printf "$rightside\n"
-  printf "$bottomleftcorner"; printf "%0.s$bottom" $(seq 1 $linesize); printf "$bottomrightcorner\n"
+  if [ "$weight" = "bold" ] || [ "$weight" = "light" ] || [ -z "$weight" ]
+    then
+     if [ "$weight" = "bold" ]
+       then
+         printf "$topleftcorner"; printf "%0.s$top" $(seq 1 $linesize); printf "$toprightcorner\n"
+         printf "$leftside"; printf "%0.s " $(seq 1 $spacesize); tput bold; printf "$message"; tput sgr0; printf "%0.s " $(seq 1 $spacesize); printf "$rightside\n"
+         printf "$bottomleftcorner"; printf "%0.s$bottom" $(seq 1 $linesize); printf "$bottomrightcorner\n"
+       else
+         if [ "$weight" = "light" ] || [ -z "$weight" ]
+           then
+             printf "$topleftcorner"; printf "%0.s$top" $(seq 1 $linesize); printf "$toprightcorner\n"
+             printf "$leftside"; printf "%0.s " $(seq 1 $spacesize); printf "$message"; tput sgr0; printf "%0.s " $(seq 1 $spacesize); printf "$rightside\n"
+             printf "$bottomleftcorner"; printf "%0.s$bottom" $(seq 1 $linesize); printf "$bottomrightcorner\n"
+        fi
+     fi
+  else
+     tput smso; printf "ERROR: Invalid weight: $weight. Please use either bold or light.\n"; tput sgr0
+  fi
 }
 
 # Ugly nested "if" conditions to define which style should be used.
