@@ -1,20 +1,20 @@
 #!/bin/sh
-# BoxTextLib.sh
+# boxsay-lib
 
 # Author; Megaf <mmegaf@gmail.com>, <https://github.com/Megaf>,
 # Creation date: 03 - April - 2022
 # License: GNU General Public License v3.0
 
 # Description:
-# BoxTextLib.sh is a simple "lib" to help you display text in the terminal
+# boxsay-lib is a simple "lib" to help you display text in the terminal
 # that will stand out from other text.
 # You can use it to attract the users attention.
 
 # Usage:
-# To display a text message in the console using BoxTextLib.sh you simply replace
-# "echo" or "printf" from your shell script with "./BoxTextLib.sh" or "./box"(TODO).
+# To display a text message in the console using boxsay-lib you simply replace
+# "echo" or "printf" from your shell script with "./boxsay" or "./box"
 #
-# For example, to show the message "test", you write in your code "./BoxTextLib.sh test".
+# For example, to show the message "test", you write in your code "./boxsay test".
 
 # Styles:
 # There are a number of styles available, the default is just a white/invisible box border..
@@ -22,13 +22,13 @@
 # define the variable "style" to the string for the name of the style..
 #
 # For example:
-# message="This is a Message." ./BoxTextLib.sh boxsolid
+# message="This is a Message." ./boxsay-lib boxsolid
 # The output will be:
 # █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
 # █  This is a Message.  █
 # █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
 #
-# Or, you can do: message="This is a message" style=boxsolid ./BoxTextLib.sh
+# Or, you can do: message="This is a message" style=boxsolid ./boxsay-lib
 # which will have the same effect.
 # For bold text, add variable weight=bold for bold and light or nothing for normal text.
 
