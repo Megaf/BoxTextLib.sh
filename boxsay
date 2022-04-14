@@ -12,7 +12,7 @@
 
 # Usage:
 # To display a text message in the console using boxsay-lib you simply replace
-# "echo" or "printf" from your shell script with "./boxsay" or "./box"
+# "echo" or "printf" from your shell script with "./boxsay""
 #
 # For example, to show the message "test", you write in your code "./boxsay test".
 
@@ -22,7 +22,7 @@
 # define the variable "style" to the string for the name of the style..
 #
 # For example:
-# message="This is a Message." ./boxsay-lib boxsolid
+# message="This is a Message." ./boxsay boxsolid
 # The output will be:
 # █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
 # █  This is a Message.  █
